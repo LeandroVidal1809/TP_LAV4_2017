@@ -1,12 +1,82 @@
 <div class="panel panel-default">
   <div class="hero-text">
-      <h1 style="font-size:50px">Sala de Juegos</h1>
-      <p>Octavio villegas</p>
-      <a href="https://github.com/octaviovillegas"target="_blank">en GitHub <i class="fa fa-github"></i></a>
+      <h1 class="titulo">Sala de Juegos</h1>
+      <p class="subtitulo">Leandro Vidal</p>
+      <a href="https://github.com/leandrovidal92"target="_blank">en GitHub <i class="fa fa-github"></i></a>
       <a  routerLink="/QuienSoy" >Quien Soy? <i class="fa fa-user"></i></a>
   </div>
   <ul class="nav navbar-nav navbar-right">
-          <li><a routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li>
-          <li><a  routerLink="/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
-  </ul>
+      <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Acepto</button> -->
+          <!-- <li><a  routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li> -->
+          <li><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Registrarse</button></li>
+          <li><button  class="buttona"  onclick="document.getElementById('id02').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button></li>
+     
+        </ul>
+
+
 </div>
+<!-- POPUP REGISTRO -->
+<div id="id01" class="modal">
+  
+    <form class="modal-content animate" >
+      <div class="container">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Cerrar Registro">X</span> 
+          <label><b>Email</b></label>
+  		  <input id="email" type="text"  [(ngModel)]="username" class="form-control" name="email" placeholder="Ingresa tu Email">		  
+        <label><b>Clave</b></label>
+        <input id="password" [(ngModel)]="password" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
+        <label><b>Confirmar Clave</b></label>
+        <input id="password" [(ngModel)]="passwordconfirm" type="password" class="form-control" name="password" placeholder="Repiite tu clave">
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Me arrepenti</button>
+          <button type="submit" (click)="Aceptar()" class="signupbtn">Registrarme</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+
+  <!-- FIN POPUP REGISTRO -->
+
+  <!-- POPUP LOGIN  -->
+  <div id="id02" class="modal">
+
+      <form class="modal-content animate" >
+        
+        <div class="container">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Cerrar ingreso">X</span> 
+            <label><b>Email</b></label>
+          <input id="email" type="text"  [(ngModel)]="username" class="form-control" name="email" placeholder="Ingresa tu Email">		  
+          <label><b>Clave</b></label>
+          <input id="password" [(ngModel)]="password" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
+          <div class="clearfix">
+            <button type="submit" (click)="Aceptar()" class="signupbtn">ingresar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id02');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+ <!--FIN  POPUP LOGIN  -->
