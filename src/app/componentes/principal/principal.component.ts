@@ -13,6 +13,7 @@ export class PrincipalComponent implements OnInit {
   };
   constructor() {  }
 
+ 
   ngOnInit() {
   }
 

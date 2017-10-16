@@ -8,9 +8,16 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class MenuCardComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) { 
+      const session = sessionStorage.getItem('user');
+      if(session==null)
+        {
+          alert("debes estar logueado");
+          this.router.navigate(['/Principal']);
+        }       
+    }
 
-
+ 
   ngOnInit() {
   }
   Juego(tipo: string) {

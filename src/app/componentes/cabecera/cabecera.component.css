@@ -54,6 +54,10 @@ button {
     width: 100%;
 }
 
+.texto{
+    size: 15 px;
+
+}
 .titulo{
     font : bold 50px "Trebuchet MS";
     color: #FDF7F7;

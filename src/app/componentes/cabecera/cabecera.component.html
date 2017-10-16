@@ -22,11 +22,11 @@
       <div class="container">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Cerrar Registro">X</span> 
           <label><b>Email</b></label>
-  		  <input id="email" type="text"  [(ngModel)]="username" class="form-control" name="email" placeholder="Ingresa tu Email">		  
+  		  <input id="email" type="text"  [(ngModel)]="usernameR" class="form-control" name="email" placeholder="Ingresa tu Email">		  
         <label><b>Clave</b></label>
-        <input id="password" [(ngModel)]="password" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
+        <input id="password" [(ngModel)]="passwordR" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
         <label><b>Confirmar Clave</b></label>
-        <input id="password" [(ngModel)]="passwordconfirm" type="password" class="form-control" name="password" placeholder="Repiite tu clave">
+        <input id="password" [(ngModel)]="passwordconfirmR" type="password" class="form-control" name="password" placeholder="Repiite tu clave">
         <div class="clearfix">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Me arrepenti</button>
           <button type="submit" (click)="Aceptar()" class="signupbtn">Registrarme</button>
@@ -61,7 +61,8 @@
           <label><b>Clave</b></label>
           <input id="password" [(ngModel)]="password" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
           <div class="clearfix">
-            <button type="submit" (click)="Aceptar()" class="signupbtn">ingresar</button>
+            <button type="submit" (click)="Entrar()" class="signupbtn">ingresar</button>
+       
           </div>
         </div>
       </form>

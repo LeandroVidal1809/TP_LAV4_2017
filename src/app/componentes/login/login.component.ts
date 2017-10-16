@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-
+import { AngularFireModule} from 'angularfire2';
+import { AngularFireAuthModule,AngularFireAuth, } from 'angularfire2/auth';
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database-deprecated';
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 @Component({
@@ -17,10 +19,14 @@ export class LoginComponent implements OnInit {
   progresoMensaje="esperando..."; 
   logeando=true;
   ProgresoDeAncho:string;
-
+  username:string;
+  password:string;
+  passwordconfirm:string;
+  tipoUser:string;
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
+    private _auth:AngularFireAuth,
     private route: ActivatedRoute,
     private router: Router) {
       this.progreso=0;
@@ -31,10 +37,26 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
-      this.router.navigate(['/Principal']);
-    }
+
+  async login()
+  {
+
+      
+  }
+ async Entrar() {
+    if(this.username==null||this.password==null||this.password==''||this.username=='')
+      {
+       alert("Debe completar el Email y su Clave para ingresar");
+      }
+      else{
+     
+      
+   await this._auth.auth.signInWithEmailAndPassword(this.username,this.password)
+                        .then(result => {  this.router.navigate(['/Principal']);})
+                        .catch(error =>{ alert(error.message)})
+      }  
+
+   
   }
   MoverBarraDeProgreso() {
     
