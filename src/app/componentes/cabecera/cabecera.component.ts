@@ -11,7 +11,7 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent implements OnInit {
-  
+  logueado:boolean
   username:string;
   password:string;
   usernameR:string;
@@ -22,7 +22,18 @@ export class CabeceraComponent implements OnInit {
   constructor(   private _auth:AngularFireAuth,
     private route: ActivatedRoute,
     private router: Router) {
-      }
+      const session = sessionStorage.getItem('user');
+      alert(session);
+      if(session==null)
+        {
+          this.logueado=false;
+        }
+        else{
+          this.logueado=true;
+        }
+      
+    }
+
 
   ngOnInit() {
   }

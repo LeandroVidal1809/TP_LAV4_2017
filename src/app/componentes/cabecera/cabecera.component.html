@@ -8,9 +8,12 @@
   <ul class="nav navbar-nav navbar-right">
       <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Acepto</button> -->
           <!-- <li><a  routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li> -->
-          <li><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Registrarse</button></li>
-          <li><button  class="buttona"  onclick="document.getElementById('id02').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button></li>
-     
+          
+          <li *ngIf="!logueado"><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Registrarse</button></li>
+          <li *ngIf="!logueado"><button  class="buttona"  onclick="document.getElementById('id02').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button></li>
+          <li *ngIf="logueado"><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Cerrar Sesion</button></li>
+                
+          
         </ul>
 
 

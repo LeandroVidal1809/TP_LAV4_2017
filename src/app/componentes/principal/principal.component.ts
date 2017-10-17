@@ -11,9 +11,12 @@ export class PrincipalComponent implements OnInit {
     isFirstOpen: true,
     isFirstDisabled: false
   };
-  constructor() {  }
+  constructor() { 
 
- 
+    
+   }
+
+  logueado:boolean
   ngOnInit() {
   }
 
