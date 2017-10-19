@@ -6,16 +6,11 @@
       <a  routerLink="/QuienSoy" >Quien Soy? <i class="fa fa-user"></i></a>
   </div>
   <ul class="nav navbar-nav navbar-right">
-      <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Acepto</button> -->
-          <!-- <li><a  routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li> -->
-          
           <li *ngIf="!logueado"><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Registrarse</button></li>
           <li *ngIf="!logueado"><button  class="buttona"  onclick="document.getElementById('id02').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button></li>
-          <li *ngIf="logueado"><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Cerrar Sesion</button></li>
-                
-          
+          <li *ngIf="logueado"><button class="buttona"  (click)="signout()" ><span class="glyphicon glyphicon-user"></span> Cerrar Sesion</button></li>
         </ul>
-
+        
 
 </div>
 <!-- POPUP REGISTRO -->
@@ -82,5 +77,7 @@
         }
     }
     </script>
-
+<div class="alert alert-warning">
+  <strong>Atencion!</strong> Deber Loguearte para ingresar
+</div>
  <!--FIN  POPUP LOGIN  -->

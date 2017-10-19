@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 // importo del module principal
 import { RouterModule, Routes } from '@angular/router';
 import { AdivinaElNumeroComponent } from '../componentes/adivina-el-numero/adivina-el-numero.component';
+import { AdivinaElEstadioComponent } from '../componentes/adivina-el-estadio/adivina-el-estadio.component';
 import { ListadoDeResultadosComponent } from '../componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from '../componentes/login/login.component';
 import { ErrorComponent } from '../componentes/error/error.component';
@@ -18,6 +19,7 @@ import { RegistroComponent } from '../componentes/registro/registro.component';
 import { MenuCardComponent } from '../componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
+
 // declaro donde quiero que se dirija
 const MiRuteo = [
 {path: '' , component: PrincipalComponent},
@@ -33,7 +35,8 @@ children:
      {path: 'Adivina' , component: AdivinaElNumeroComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
+      {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
+      {path: 'Estadio' , component: AdivinaElEstadioComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];

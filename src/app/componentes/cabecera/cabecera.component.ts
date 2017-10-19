@@ -23,7 +23,7 @@ export class CabeceraComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) {
       const session = sessionStorage.getItem('user');
-      alert(session);
+      
       if(session==null)
         {
           this.logueado=false;
@@ -56,4 +56,10 @@ export class CabeceraComponent implements OnInit {
   }
   
 
+  signout()
+  {
+    
+    sessionStorage.clear();
+    this.router.navigate(['/']);
+  }
 }

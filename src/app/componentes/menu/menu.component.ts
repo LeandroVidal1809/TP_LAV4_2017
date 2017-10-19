@@ -7,11 +7,21 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+session:string;
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) { 
+
+      this.session = sessionStorage.getItem('user');
+    }
 
   ngOnInit() {
+  }
+
+  signout()
+  {
+    
+    sessionStorage.clear();
+    this.router.navigate(['/']);
   }
 
   Juego(tipo: string) {

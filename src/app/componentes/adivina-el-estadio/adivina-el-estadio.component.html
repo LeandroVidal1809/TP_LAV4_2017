@@ -1,0 +1,41 @@
+
+<div class="centra">
+  <button [hidden]="botonComenzar" (click)="Habilita()" class="buttona">Comenzar</button>
+</div>
+<div  [hidden]="plataforma" class="container" >
+  <div class="centra">
+  <div class="row">
+  <div class="col-sm-12">
+    
+  <div class="panel panel-primary">
+  <div class="panel-body">
+  
+  <div class="form-group">
+    <label class="col-sm-12 control-label" for="logoFileImage">ADIVINA A QUE CLUB PERTENECE EL ESTADIO</label>
+    <div class="col-sm-12">
+      <div class="thumbnail">
+        <img class="img-thumbnail" src="../assets/imagenes/{{club}}.jpg" alt="Avatar" style="width:50%">
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  </div>
+  </div>
+  
+  <div>
+    <a  *ngFor="let item of miArrayEscudo">
+    <a (click)="OpcionElegida(item.Club)">
+      <img  src="../assets/imagenes/{{item.Club}}.png" alt="Avatar" style="width:5%">
+    </a>
+    </a>
+    </div>
+
+    <h1 *ngIf = '[intentos] ==2'>Has Fallado, te quedan {{intentos}} Intentos Mas! </h1>
+    <h1 *ngIf = '[intentos] ==1'>Has Fallado, te quedan {{intentos}} Intentos Mas! </h1>
+    <h1 *ngIf = '[intentos]==0'>Perdiste! Intentalo otra vez </h1>
+
+  <button *ngIf = '[intentos]==0'  (click)="Habilita()" class="buttona">Otra vez</button>
+</div>
