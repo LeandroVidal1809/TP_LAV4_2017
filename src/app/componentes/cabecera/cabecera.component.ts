@@ -3,7 +3,7 @@ import { AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule,AngularFireAuth, } from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database-deprecated';
 import {Subscription} from "rxjs";
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap,} from '@angular/router';
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 @Component({
   selector: 'app-cabecera',
@@ -18,20 +18,21 @@ export class CabeceraComponent implements OnInit {
   passwordR:string;
   passwordconfirmR:string;
   Mensaje:string;
-
+  semuestra:boolean;
   constructor(   private _auth:AngularFireAuth,
     private route: ActivatedRoute,
     private router: Router) {
       const session = sessionStorage.getItem('user');
-      
-      if(session==null)
-        {
+    
+
+          if(session==null)
+          {
           this.logueado=false;
-        }
-        else{
-          this.logueado=true;
-        }
-      
+          }
+          else{
+          this.logueado=true;  
+          }
+     
     }
 
 
@@ -48,7 +49,7 @@ export class CabeceraComponent implements OnInit {
 
       
    await this._auth.auth.signInWithEmailAndPassword(this.username,this.password)
-                        .then(result => { alert("Bienvenido/a "+this.username);sessionStorage.setItem("user",this.username); this.router.navigate(['/Juegos']);})
+                        .then(result => { alert("Bienvenido/a "+this.username);this.semuestra=true;sessionStorage.setItem("user",this.username); this.router.navigate(['/Juegos']);})
                         .catch(error =>{ alert(error.message)})
       }  
 

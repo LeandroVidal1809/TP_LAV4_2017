@@ -8,8 +8,8 @@ import { Juego } from '../clases/juego'
 export class JuegoAdivina extends  Juego {
     numeroSecreto: number = 0;
     numeroIngresado = 0;
-    constructor(nombre?: string, gano?: boolean, jugador?:string) {
-        super("Adivina el número",gano,jugador);
+    constructor(nombre?: string, gano?: boolean, jugador?:string,minutos?:string,segundos?:string,intentos?:any) {
+        super("Adivina el número",gano,jugador,minutos,segundos,intentos);
      
     
       
@@ -31,8 +31,8 @@ export class JuegoAdivina extends  Juego {
       }
       public retornarAyuda() {
         if (this.numeroIngresado < this.numeroSecreto) {
-          return "Falta";
+          return "El numero es mayor al ingresado";
         }
-        return "Te pasate";
+        return "El numero es menor al ingresado";
       }
 }

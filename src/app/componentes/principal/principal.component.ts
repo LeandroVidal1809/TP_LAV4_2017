@@ -12,6 +12,7 @@ export class PrincipalComponent implements OnInit {
     isFirstDisabled: false
   };
   constructor() { 
+    
 
     
    }

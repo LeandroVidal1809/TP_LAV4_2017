@@ -11,6 +11,8 @@
         <th>Juego</th>
         <th>Jugador</th>
         <th>Resultado</th>
+        <th>Tiempo</th>
+        <th>Intentos</th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +20,9 @@
         <td>{{juego.nombre}} </td>
         <td>{{juego.jugador}} </td> 
         <td *ngIf="juego.gano">Gano </td>   
-        <td *ngIf="!juego.gano">Perdio</td>     
+        <td *ngIf="!juego.gano">Perdio</td>
+        <td>{{("0000"+juego.minutos).slice(-2)}}:{{("0000"+juego.segundos).slice(-2)}}</td>
+        <td>{{juego.intentos}} </td>     
       </tr>
      
     </tbody>

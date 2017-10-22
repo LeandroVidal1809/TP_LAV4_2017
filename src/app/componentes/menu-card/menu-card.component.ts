@@ -13,7 +13,7 @@ export class MenuCardComponent implements OnInit {
       if(session==null)
         {
           alert("debes estar logueado");
-          this.router.navigate(['/Principal']);
+          this.router.navigate(['/Principal',{muestra:"false"}]);
         }       
     }
 

@@ -1,8 +1,12 @@
 
 form {
-    border: 10px solid #f1f1f1;
+    border: 10px solid #000000;
     padding: 10px;
-    background:gray;
+    background: #609FE0;
+    text-align: center;
+    width: 50%;
+    margin-left: 425px;
+    
 }
 
 input[type=text], input[type=password] {
@@ -10,7 +14,7 @@ input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     box-sizing: border-box;
 }
 
@@ -115,4 +119,73 @@ span.psw {
 @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
+}
+
+.buttona {
+    border-radius: 10px;
+    position: relative;
+    background-color: #000000;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.buttona:after {
+    content: "";
+    background: #9EA39E;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+    border-radius: 10px;
+}
+
+.label1{
+    font-size:  25px;   
+    border-color: black;
+    border:black;
+    color: black;
+}
+
+.buttonav {
+    border-radius: 10px;
+    position: relative;
+    background-color: #756F6F;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.buttonav:after {
+    content: "";
+    background: #9EA39E;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+    border-radius: 10px;
 }

@@ -1,7 +1,8 @@
 
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAdivina } from '../../clases/juego-adivina'
-
+import {Subscription} from "rxjs";
+import {TimerObservable} from "rxjs/observable/TimerObservable";
 @Component({
   selector: 'app-adivina-el-numero',
   templateUrl: './adivina-el-numero.component.html',
@@ -9,20 +10,40 @@ import { JuegoAdivina } from '../../clases/juego-adivina'
 })
 export class AdivinaElNumeroComponent implements OnInit {
  @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
-
+ comenzo:boolean;
   nuevoJuego: JuegoAdivina;
   Mensajes:string;
   contador:number;
   ocultarVerificar:boolean;
- 
+  Tiempo: number;
+  Minuto:number;
+  Minutostring:any;
+  repetidor:any;
   constructor() { 
-    this.nuevoJuego = new JuegoAdivina();
+    this.nuevoJuego = new JuegoAdivina("",false,sessionStorage.getItem('user'),"00","00",0);
     console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
     this.ocultarVerificar=false;
+    this.Tiempo=0;
+    this.comenzo=false;
+    this.Minuto=0;
   }
   generarnumero() {
+
     this.nuevoJuego.generarnumero();
     this.contador=0;
+    this.repetidor = setInterval(()=>{
+      if(this.Tiempo==59)
+      {
+        this.Tiempo=0;
+        this.Minuto++;
+      } 
+      else{
+        this.Tiempo++;
+      }
+      
+      }, 1000);
+      this.comenzo=true;
+    
   }
   verificar()
   {
@@ -31,38 +52,26 @@ export class AdivinaElNumeroComponent implements OnInit {
     console.info("numero Secreto:",this.nuevoJuego.gano);  
     if (this.nuevoJuego.verificar()){
       
+      this.nuevoJuego.intentos=this.contador;
+      this.nuevoJuego.gano=true;
+      this.nuevoJuego.minutos=this.Minuto;
+      this.nuevoJuego.segundos=this.Tiempo;
       this.enviarJuego.emit(this.nuevoJuego);
-      this.MostarMensaje("Sos un Genio!!!",true);
+      this.MostarMensaje("Felicidades!! Has ganado en " + this.contador + " intentos" ,true);
       this.nuevoJuego.numeroSecreto=0;
+        clearInterval(this.repetidor);
+        this.ocultarVerificar=true;
+        this.comenzo=false;
+        this.Tiempo=0;
+     
 
     }else{
 
       let mensaje:string;
-      switch (this.contador) {
-        case 1:
-          mensaje="No, intento fallido, animo";
-          break;
-          case 2:
-          mensaje="No,Te estaras Acercando???";
-          break;
-          case 3:
-          mensaje="No es, Yo crei que la tercera era la vencida.";
-          break;
-          case 4:
-          mensaje="No era el  "+this.nuevoJuego.numeroIngresado;
-          break;
-          case 5:
-          mensaje=" intentos y nada.";
-          break;
-          case 6:
-          mensaje="Afortunado en el amor";
-          break;
-      
-        default:
-            mensaje="Ya le erraste "+ this.contador+" veces";
-          break;
-      }
-      this.MostarMensaje("#"+this.contador+" "+mensaje+" ayuda :"+this.nuevoJuego.retornarAyuda());
+
+            mensaje="Error Número : " + this.contador;
+            
+      this.MostarMensaje(mensaje+" ("+this.nuevoJuego.retornarAyuda()+")");
      
 
     }
