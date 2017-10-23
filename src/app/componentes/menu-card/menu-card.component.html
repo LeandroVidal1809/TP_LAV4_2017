@@ -1,8 +1,8 @@
-<div class="container" >
+<!-- <div class="container" >
     <div class="card">
       <img class="img-thumbnail"   src="../assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
-      <h1>Velocidad y agilidad aritmética </h1>
-      <p class="title">Juego de agilidad mental</p>
+      <h1 class="letra">Velocidad y agilidad aritmética </h1>
+      <p class="letra">Juego de agilidad mental</p>
       <p>UTN FRA </p>
   
       <a href="#"><i class="fa fa-dribbble"></i></a> 
@@ -14,9 +14,23 @@
     </div>
   
     <div class="card">
+        <img  class="img-thumbnail"  src="../assets/imagenes/anagrama.jpg" alt="Avatar" style="width:100%">
+        <h1  class="letra">Anagrama</h1>
+        <p class="letra">Juega de estrategia</p>
+        <p>UTN FRA </p>
+        
+        <a href="#"><i class="fa fa-dribbble"></i></a> 
+        <a href="#"><i class="fa fa-twitter"></i></a> 
+        <a href="#"><i class="fa fa-linkedin"></i></a> 
+        <a href="#"><i class="fa fa-facebook"></i></a> 
+        <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
+      </div>
+  
+
+    <div class="card">
       <img class="img-thumbnail" src="../assets/imagenes/ppt.jpg" alt="Avatar" style="width:100%">
-      <h1>Piedra Papel o Tijera</h1>
-      <p class="title">Juega contra la máquina</p>
+      <h1  class="letra">Piedra Papel o Tijera</h1>
+      <p  class="letra">Juega contra la máquina</p>
       <p>UTN FRA </p>
       
       <a href="#"><i class="fa fa-dribbble"></i></a> 
@@ -27,8 +41,8 @@
     </div>
     <div class="card">
       <img  class="img-thumbnail"  src="../assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
-      <h1>Adivina el número secreto</h1>
-      <p class="title">Juega de estrategia</p>
+      <h1  class="letra">Adivina el número secreto</h1>
+      <p  class="letra">Juega de estrategia</p>
       <p>UTN FRA </p>
       
       <a href="#"><i class="fa fa-dribbble"></i></a> 
@@ -37,4 +51,111 @@
       <a href="#"><i class="fa fa-facebook"></i></a> 
       <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
     </div>
+    <div class="card">
+        <img  class="img-thumbnail"  src="../assets/imagenes/avatarEstadio.jpeg" alt="Avatar" style="width:100%">
+        <h1  class="letra">Adivina el estadio</h1>
+        <p  class="letra">Juega de estrategia</p>
+        <p>UTN FRA </p>
+        
+        <a href="#"><i class="fa fa-dribbble"></i></a> 
+        <a href="#"><i class="fa fa-twitter"></i></a> 
+        <a href="#"><i class="fa fa-linkedin"></i></a> 
+        <a href="#"><i class="fa fa-facebook"></i></a> 
+        <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
+      </div>
   </div>
+   -->
+   <div class="container">
+      <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+              <div class="card card-inverse card-info">
+                  <img class="card-img-top" src="../assets/imagenes/anagrama.jpg">
+                  <div class="card-block">
+                      <figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure>
+                      <h4 class="card-title">Anagrama</h4>
+                      <div class="card-text">
+                         Encuentra la palabra oculta en el menor tiempo posible!
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="MiBoton" (click)="Juego('Adivina')">Jugar</button>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+              <div class="card card-inverse card-info">
+                  <img class="card-img-top" src="../assets/imagenes/ppt.jpg">
+                  <div class="card-block">
+                      <figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure>
+                      <h4 class="card-title">Piedra Papel o Tijera</h4>
+                      <div class="card-text">
+                          Desafía tu suerte en este clásico juego.
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="MiBoton" (click)="Juego('PPT')">Jugar</button>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+              <div class="card card-inverse card-info">
+                  <img class="card-img-top" src="../assets/imagenes/adivina.png">
+                  <div class="card-block">
+                      <figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure>
+                      <h4 class="card-title">Adivina el número</h4>
+                      <div class="card-text">
+                          ¿En cuánto tiempo podras adivinar el número oculto?.
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="MiBoton" (click)="Juego('Adivina')">Jugar</button>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+              <div class="card card-inverse card-info">
+                  <img class="card-img-top" src="../assets/imagenes/cerebro.jpg">
+                  <div class="card-block">
+                      <figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure>
+                      <h4 class="card-title">Agilidad aritmética</h4>
+                      <div class="card-text">
+                          Desafía tu destreza realizando operaciones en el menor tiempo!.
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="MiBoton" >Jugar</button>
+                      
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+              <div class="card card-inverse card-info">
+                  <img class="card-img-top" src="../assets/imagenes/avatarEstadio.jpeg">
+                  <div class="card-block">
+                      <figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure>
+                      <h4 class="card-title">Adivina el estadio</h4>
+                      <div class="card-text">
+                          Adivina a que club pertenece cada estadio oculto.
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="MiBoton">Follow</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
