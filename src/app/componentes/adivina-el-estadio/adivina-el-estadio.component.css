@@ -53,3 +53,11 @@ img {width:400px; margin:auto; }
     background-color: rgb(92, 184, 92);
     border-color: rgb(76, 174, 76);
 }
+.escudo
+{
+    width: 5%;
+}
+.escudo:hover
+{
+    width: 6%;
+}

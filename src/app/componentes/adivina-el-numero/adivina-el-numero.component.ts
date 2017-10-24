@@ -10,7 +10,7 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 })
 export class AdivinaElNumeroComponent implements OnInit {
  @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
- comenzo:boolean;
+  comenzo:boolean;
   nuevoJuego: JuegoAdivina;
   Mensajes:string;
   contador:number;

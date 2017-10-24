@@ -18,17 +18,18 @@
       </div>
     </div>
   </div>
+  <h1 [hidden]="ocultaCorrecto">Correcto!! era el estadio de {{miOpcion}} </h1>
+  <h1 [hidden]="!this.nuevoJuego.gano">Ganaste! tu tiempo es : {{("0000"+this.Minuto).slice(-2)}}:{{("0000"+this.Tiempo).slice(-2)}} </h1>
+</div>
   </div>
   </div>
-  
-  
-  </div>
-  </div>
-  
+ 
+</div>
+
   <div>
     <a  *ngFor="let item of miArrayEscudo">
-    <a (click)="OpcionElegida(item.Club)">
-      <img  src="../assets/imagenes/{{item.Club}}.png" alt="Avatar" style="width:5%">
+    <a *ngIf = '[intentos] > 0' (click)="OpcionElegida(item.Club)">
+      <img  src="../assets/imagenes/{{item.Club}}.png" alt="Avatar" class="escudo" >
     </a>
     </a>
     </div>
