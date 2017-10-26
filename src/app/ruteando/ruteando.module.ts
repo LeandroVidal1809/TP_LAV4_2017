@@ -12,6 +12,9 @@ import { AgilidadAritmeticaComponent } from '../componentes/agilidad-aritmetica/
 import { MenuComponent } from '../componentes/menu/menu.component';
 import { AdivinaMasListadoComponent } from '../componentes/adivina-mas-listado/adivina-mas-listado.component';
 import { AgilidadMasListadoComponent } from '../componentes/agilidad-mas-listado/agilidad-mas-listado.component';
+import { PptComponent } from '../componentes/ppt/ppt.component';
+import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+
 import { ListadoComponent } from'../componentes/listado/listado.component'
 import { ListadosComponent } from '../componentes/listados/listados.component';
 import { JuegosComponent } from '../componentes/juegos/juegos.component';
@@ -32,11 +35,13 @@ const MiRuteo = [
 component: JuegosComponent ,
 children:
      [{path: '' , component: MenuCardComponent},
-     {path: 'Adivina' , component: AdivinaElNumeroComponent},
+     {path: 'Adivina' , component: AdivinaMasListadoComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-      {path: 'Estadio' , component: AdivinaElEstadioComponent}]
+      {path: 'Agilidad' , component: AgilidadMasListadoComponent},
+      {path: 'Estadio' , component: AdivinaElEstadioComponent},
+      {path: 'ppt' , component: PptComponent},
+      {path: 'Anagrama' , component: AnagramaComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];
