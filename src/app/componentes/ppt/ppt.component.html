@@ -1,19 +1,16 @@
-
-<div class="content-box-blue">Tu 0 - 0 Oponente</div>
-  <div class="centra">
-    <tr>
-    <th class="Marcador">
-
-    </th>
-    <th></th>
-    </tr>
+<app-cabecera>  </app-cabecera>
+<app-principal>  </app-principal>
+<h1 class="content-box-blue">Tu 	&nbsp; 	&nbsp; 	&nbsp;	&nbsp; 	&nbsp; 	&nbsp; 	&nbsp;  	&nbsp;	&nbsp; 	&nbsp; {{puntoTu}} - {{puntoOpo}} &nbsp; 	&nbsp;  	&nbsp;&nbsp; 	&nbsp; 	&nbsp;	&nbsp; 	&nbsp; 	&nbsp; Oponente </h1>
+<h1 [hidden]="!comenzo" class="centra3">Tiempo de Juego: {{("0000"+this.Minuto).slice(-2)}}:{{("0000"+this.Tiempo).slice(-2)}}  <i class="fa fa-spinner fa-spin"></i></h1>
+<h1 [hidden]="fin" class="centra3" > JUEGO FINALIZADO USTED HA {{result}}</h1>
+<button [hidden]="botonComenzar" (click)="Habilita()" class="buttona">Comenzar</button>
+<h3 [hidden]="botonComenzar"  class="centra2">El juego durará 20 segundos, el que mas puntos obtenga será el ganador. Suerte!!</h3>
+<div [hidden]="plataforma" class="centra">
     <tr >
         <th><a (click)="OpcionElegida('piedra')"><img class="imagenJuego" src="../assets/imagenes/piedra.jpg"></a></th>
         <th><a (click)="OpcionElegida('papel')"><img class="imagenJuego" src="../assets/imagenes/papel.jpg"></a></th>
         <th><a (click)="OpcionElegida('tijera')"><img class="imagenJuego" src="../assets/imagenes/tijera.jpg"></a></th>
-    </tr>
- 
-      
+    </tr> 
   </div>
   <div [hidden]="eligio" class="centra1" >
   <tr>
@@ -22,5 +19,9 @@
       <th><img class="imagenResultado" src="../assets/imagenes/{{this.opcionOpo}}.jpg"></th>
 
   </tr>
+ 
+    
+ 
   </div>
+  <div
 

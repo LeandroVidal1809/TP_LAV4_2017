@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<!-- <div class="panel panel-default">
   <div class="hero-text">
       <h1 class="titulo">Sala de Juegos</h1>
       <p class="subtitulo">Leandro Vidal</p>
@@ -12,7 +12,7 @@
         </ul>
         
 
-</div>
+</div> -->
 <!-- POPUP REGISTRO -->
 <div id="id01" class="modal">
   
@@ -43,7 +43,7 @@
           modal.style.display = "none";
       }
   }
-  </script>
+  </script> 
 
   <!-- FIN POPUP REGISTRO -->
 
@@ -79,5 +79,21 @@
     </script>
 <div [hidden]="semuestra"  class="alert alert-warning">
   <strong>Atencion!</strong> Deber Loguearte para ingresar
-</div>
+</div> 
  <!--FIN  POPUP LOGIN  -->
+
+
+<header>
+  <div class="container ">
+      <h1 id="logo">
+          Sala de Juegos
+      </h1>
+      <nav>
+        <ul >
+          <li *ngIf="!logueado"><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Registrarse</button></li>
+          <li *ngIf="!logueado"><button  class="buttona"  onclick="document.getElementById('id02').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button></li>
+          <li *ngIf="logueado"><button class="buttona"  (click)="signout()" ><span class="glyphicon glyphicon-user"></span> Cerrar Sesion</button></li>
+        </ul>
+      </nav>
+  </div>
+</header>

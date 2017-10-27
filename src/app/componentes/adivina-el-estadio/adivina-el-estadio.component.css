@@ -4,7 +4,9 @@ img {width:400px; margin:auto; }
 
     text-align: center;
 }
-
+.container{
+    padding-left:100px;
+}
 .buttona {
     border-radius: 10px;
     position: relative;
