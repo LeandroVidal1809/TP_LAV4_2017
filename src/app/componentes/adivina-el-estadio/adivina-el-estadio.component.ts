@@ -95,7 +95,7 @@ constructor(private route: ActivatedRoute,
 
 
   }
-  
+  //Juego Propio Leandro Vidal Finalizada su funcionalidad el 18/10/2017
   Habilita()
   {   
     this.ComenzarTimer();
