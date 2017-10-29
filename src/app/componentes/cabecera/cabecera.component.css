@@ -60,10 +60,13 @@ button {
 }
 .titulo{
     font : bold 50px "Trebuchet MS";
-    color: #FDF7F7;
-    font-size:50px;
+    color: #000000;
+    font-size:70px;
     font: outline;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 white, 0 -1px white;
+    margin-left: 35%;
+    margin-top: 2%;
+    size: 75px;
 
 }
 .subtitulo{
@@ -318,8 +321,7 @@ button {
       float: right;
       text-align: right; }
   
-  /* =Header
-  -------------------------------------------------------------- */
+
   header {
     width: 100%;
     height: 150px;
@@ -328,7 +330,7 @@ button {
     top: 0;
     left: 0;
     z-index: 999;
-    background-color: #0683c9;
+    background-image: url("/assets/imagenes/cabecera.jpg");
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     -ms-transition: height 0.3s;

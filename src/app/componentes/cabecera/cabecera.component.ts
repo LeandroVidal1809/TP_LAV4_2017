@@ -49,7 +49,7 @@ export class CabeceraComponent implements OnInit {
 
       
    await this._auth.auth.signInWithEmailAndPassword(this.username,this.password)
-                        .then(result => { alert("Bienvenido/a "+this.username);this.semuestra=true;sessionStorage.setItem("user",this.username); this.router.navigate(['/Juegos']);})
+                        .then(result => { alert("Bienvenido/a "+this.username);this.semuestra=true;sessionStorage.setItem("user",this.username);sessionStorage.setItem("muestra","true"); this.router.navigate(['/Juegos']);})
                         .catch(error =>{ alert(error.message)})
       }  
 
@@ -61,6 +61,6 @@ export class CabeceraComponent implements OnInit {
   {
     
     sessionStorage.clear();
-    this.router.navigate(['/']);
+    this.router.navigate(['/Principal']);
   }
 }

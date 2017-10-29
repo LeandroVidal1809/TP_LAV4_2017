@@ -5,7 +5,8 @@ export abstract class Juego {
   public intentos;
   public minutos;
   public segundos;
-  constructor(nombre?: string, gano?: boolean,jugador?:string,minutos?:string,segundos?:string,intentos?:any) {
+  public resultado;
+  constructor(nombre?: string, gano?: boolean,jugador?:string,minutos?:string,segundos?:string,intentos?:any,resultado?:string) {
     if (nombre)
       this.nombre = nombre;
       this.gano = gano;
@@ -13,12 +14,10 @@ export abstract class Juego {
       this.intentos=intentos;
       this.minutos=minutos;
       this.segundos=segundos;
+      this.resultado=resultado;
   }
 
 
-  
-
-  public abstract verificar():boolean; 
   
   public retornarAyuda() {
     

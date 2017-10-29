@@ -1,7 +1,9 @@
  <app-cabecera>  </app-cabecera>
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+<div [hidden]="muestra" class="alert alert-danger" style="margin-top:130px;margin-left:290px;">
+    <strong>Atención!</strong> debe ingresar para poder Jugar! 
+</div>
 <div class="nav-side-menu">
     <div class="brand">Menu Principal</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -9,21 +11,19 @@
         <div class="menu-list">
   
             <ul id="menu-content" class="menu-content collapse out">
-                <li>
-                  <a href="#">
-                  <i class="fa fa-dashboard fa-lg"></i> Juegos
-                  </a>
+                <li (click)="Juego('Juegos')">
+                  <i class="fa fa-dashboard fa-lg" ></i> Juegos
                 </li>
 
                 <li  data-toggle="collapse" data-target="#products" class="collapsed active">
                   <a href="#"><i class="fa fa-gift fa-lg"></i> Juegos <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="products">
-                    <li><a  (click)="Juego('Estadio')">Adivina el estadio</a></li>
-                    <li><a  (click)="Juego('Adivina')">Adivina el Numero</a></li>
-                    <li><a  (click)="Juego('Agilidad')">Agilidad aritmetica</a></li>
-                    <li><a (click)="Juego('ppt')">Piedra papel o Tijera</a></li>
-                    <li><a  (click)="Juego('Anagrama')">Anagrama</a></li>
+                    <li  (click)="Juego('Estadio')"><a>Adivina el estadio</a></li>
+                    <li   (click)="Juego('Adivina')"><a>Adivina el Numero</a></li>
+                    <li (click)="Juego('Agilidad')"><a>Agilidad aritmetica</a></li>
+                    <li (click)="Juego('ppt')"><a>Piedra papel o Tijera</a></li>
+                    <li  (click)="Juego('Anagrama')"><a>Anagrama</a></li>
                  
                 </ul>
 

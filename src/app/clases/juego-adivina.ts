@@ -1,21 +1,14 @@
 import { Juego } from '../clases/juego'
-/**
- * Juego adivina el Numero
- * la amquina genera un numero secreto ramdom entre 0 y 100.
- * El jugador debe adivinar el numero.
- * la maquina le informa si el numero ingresado es mayor o menor al numero secreto.
- */
+
 export class JuegoAdivina extends  Juego {
-    numeroSecreto: number = 0;
-    numeroSecretoppt: number = 0;
-    numeroIngresado = 0;
-    constructor(nombre?: string, gano?: boolean, jugador?:string,minutos?:string,segundos?:string,intentos?:any) {
-        super("Adivina el número",gano,jugador,minutos,segundos,intentos);
-     
-    
-      
-      }
-    public verificar() {
+  numeroSecreto: number = 0;
+  numeroSecretoppt: number = 0;
+  numeroIngresado = 0;
+   
+  constructor(nombre?: string, gano?: boolean, jugador?:string,minutos?:string,segundos?:string,intentos?:any) {
+        super("Adivina el número",gano,jugador,minutos,segundos,intentos)}
+
+public verificar() {
         if (this.numeroIngresado == this.numeroSecreto) {
           this.gano = true;
         }
@@ -25,16 +18,10 @@ export class JuegoAdivina extends  Juego {
           return false;
         }
      }
-     public generarnumero() {
+
+public generarnumero() {
         this.numeroSecreto = Math.floor((Math.random() * 100) + 1);
         console.info('numero Secreto:' + this.numeroSecreto);
-        this.gano = false;
-      }
-      public generarnumeroppt() {
-       var min = Math.ceil(0);
-       var max = Math.floor(3);
-        this.numeroSecretoppt = Math.floor(Math.random() * (max - min)) + min;
-        console.info('numero Secreto:' + this.numeroSecretoppt);
         this.gano = false;
       }
       

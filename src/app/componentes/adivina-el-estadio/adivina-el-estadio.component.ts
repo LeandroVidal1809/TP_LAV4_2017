@@ -2,7 +2,9 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAdivina } from '../../clases/juego-adivina'
 import {Subscription} from "rxjs";
-import {TimerObservable} from "rxjs/observable/TimerObservable";@Component({
+import {TimerObservable} from "rxjs/observable/TimerObservable";
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+@Component({
   selector: 'app-adivina-el-estadio',
   templateUrl: './adivina-el-estadio.component.html',
   styleUrls: ['./adivina-el-estadio.component.css']
@@ -14,6 +16,8 @@ export class AdivinaElEstadioComponent implements OnInit {
   plataforma:boolean;
   botonComenzar:boolean;
   club:string;
+  perdio:boolean;
+  ocultaEscudo:boolean;
   miOpcion:string;
   miArrayEscudo: Array<any>;
   intentos:number;
@@ -23,14 +27,28 @@ export class AdivinaElEstadioComponent implements OnInit {
   Minuto:number;
   comenzo:boolean;
   repetidor:any;
-
-  constructor() { 
+ 
+constructor(private route: ActivatedRoute,
+      private router: Router) {
+       const session = sessionStorage.getItem('user');
+       if(session==null)
+        {
+          alert("debes estar logueado");
+          this.router.navigate(['/Principal']);
+          sessionStorage.setItem("muestra","false");
+        } 
+        else
+          {
+            sessionStorage.setItem("muestra","true");
+          }      
+      
     this.ocultaCorrecto=true;
     this.botonComenzar=false;
     this.plataforma=true;
     this.Tiempo=0;
     this.comenzo=false;
     this.Minuto=0;
+    this.perdio=true;
     this.i=0;
     this.nuevoJuego = new JuegoAdivina("",false,sessionStorage.getItem('user'),"00","00",0);
     this.CargarArrays();
@@ -55,15 +73,15 @@ export class AdivinaElEstadioComponent implements OnInit {
             
             if(this.i>=this.miArrayClub.length)
             {
-              this.intentos=0;
+              this.ocultaCorrecto=true
               this.nuevoJuego.gano=true;
+              this.intentos=0;
               this.TerminarTimer();
             }
             else
             {
               this.club=this.miArrayClub[this.i].Black;
             }
-          this.intentos=3;
         }
       else
        {
@@ -71,6 +89,7 @@ export class AdivinaElEstadioComponent implements OnInit {
         if(this.intentos==0)
           {
             this.nuevoJuego.gano=false;
+            this.perdio=false;
           }
        }
 

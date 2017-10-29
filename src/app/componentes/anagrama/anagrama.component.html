@@ -1,4 +1,22 @@
 
+<app-cabecera>  </app-cabecera>
+<app-principal>  </app-principal>
+        <div  class="row col-xs-12" style="background-color:#505355;height:100px;width:1385px;margin-top:94px;margin-left:300px;">
+                <input name="respuestasNro"  type="text" [(ngModel)]="AciertosTXT" class="col-xs-2">
+                <h1   style="margin-left:200px;color:white;"  class="col-xs-2">{{("0000"+this.Minuto).slice(-2)}}:{{("0000"+this.Tiempo).slice(-2)}} </h1>
+                <input style="margin-left:200px;" [(ngModel)]="respuesta" (keyup.enter)="Verificar()" name="respuesta"  type="text"  placeholder="Respuesta..."  class="col-xs-4">
+                
+            </div>
+            <div [hidden]="comienza">
+                <h1 *ngIf = 'gano>0' style="color:green;margin-left:520px;margin-top:294px;">GANASTE!! tu tiempo fue de {{("0000"+this.Minuto).slice(-2)}}:{{("0000"+this.Tiempo).slice(-2)}}, intenta superar esa marca! </h1>
+              <button  type="button" style="margin-top:94px;border-radius: 14px;margin-left:800px;width:400px;height:100px;background-color:#505355;font-size:35px;" (click)="habilita()" class="btn btn-info">Comenzar</button>
+            </div>
+            <div  [hidden]="!comienza">                   
+              <img  src="../assets/imagenes/{{[palabraMuestra]}}.png"  style="width:50%;margin-left:570px;margin-top:100px;">
+            </div>
+            <br>
+            <h1 [hidden]="ocultaCorrecto" style="color:green;margin-left:720px;">Correcto!! la palabra era {{this.respuesta}} </h1>
+<!-- 
 <app-anagrama (enviarJuego)="tomarJuegoTerminado($event)">   </app-anagrama> 
 <h1> Listado de resultados </h1>
-<app-listado-de-resultados [listado]="listadoParaCompartir"> </app-listado-de-resultados>
+<app-listado-de-resultados [listado]="listadoParaCompartir"> </app-listado-de-resultados> -->

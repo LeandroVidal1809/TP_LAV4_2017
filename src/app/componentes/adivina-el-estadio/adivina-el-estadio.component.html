@@ -1,8 +1,10 @@
 <app-cabecera>  </app-cabecera>
 <app-principal>  </app-principal>
+
 <div class="centra">
   <button [hidden]="botonComenzar" (click)="Habilita()" class="buttona">Comenzar</button>
 </div>
+
 <div  [hidden]="plataforma" class="container" >
   <div class="centra">
   <div class="row">
@@ -12,7 +14,7 @@
   <div class="panel-body">
   
   <div class="form-group">
-    <label class="col-sm-12 control-label" for="logoFileImage">ADIVINA A QUE CLUB PERTENECE EL ESTADIO</label>
+    <h3 class="col-sm-12 control-label" for="logoFileImage">ADIVINA A QUE CLUB PERTENECE EL ESTADIO</h3>
     <div class="col-sm-12">
       <div class="thumbnail">
         <img class="img-thumbnail" src="../assets/imagenes/{{club}}.jpg" alt="Avatar" style="width:50%">
@@ -21,6 +23,7 @@
   </div>
   <h1 [hidden]="ocultaCorrecto">Correcto!! era el estadio de {{miOpcion}} </h1>
   <h1 [hidden]="!this.nuevoJuego.gano">Ganaste! tu tiempo es : {{("0000"+this.Minuto).slice(-2)}}:{{("0000"+this.Tiempo).slice(-2)}} </h1>
+  <h1 [hidden]="this.perdio">Perdiste!</h1>
 </div>
   </div>
   </div>
@@ -37,7 +40,10 @@
 
     <h1 *ngIf = '[intentos] ==2'>Has Fallado, te quedan {{intentos}} Intentos Mas! </h1>
     <h1 *ngIf = '[intentos] ==1'>Has Fallado, te quedan {{intentos}} Intentos Mas! </h1>
-    <h1 *ngIf = '[intentos]==0'>Perdiste! Intentalo otra vez </h1>
+    <h1 *ngIf = '[intentos]== 0'> Juega otra vez </h1>
 
   <button *ngIf = '[intentos]==0'  (click)="Habilita()" class="buttona">Otra vez</button>
+</div>
+</div>
+<div>
 </div>

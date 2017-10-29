@@ -121,6 +121,10 @@ span.psw {
     to {bottom: 0; opacity: 0;}
 }
 
+.centra{
+    text-align: center;
+    margin-top: 80px;
+}
 .buttona {
     border-radius: 10px;
     position: relative;

@@ -1,6 +1,6 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAgilidad } from '../../clases/juego-agilidad'
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 @Component({
@@ -18,7 +18,19 @@ export class AgilidadAritmeticaComponent implements OnInit {
   private subscription: Subscription;
   ngOnInit() {
   }
-   constructor() {
+  constructor(private route: ActivatedRoute,
+    private router: Router) {
+      const session = sessionStorage.getItem('user');
+      if(session==null)
+        {
+          alert("debes estar logueado");
+          this.router.navigate(['/Principal']);
+          sessionStorage.setItem("muestra","false");
+        } 
+        else
+          {
+            sessionStorage.setItem("muestra","true");
+          }      
      this.ocultarVerificar=true;
      this.Tiempo=5; 
     this.nuevoJuego = new JuegoAgilidad();

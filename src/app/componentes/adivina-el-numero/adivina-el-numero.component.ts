@@ -3,6 +3,7 @@ import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAdivina } from '../../clases/juego-adivina'
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-adivina-el-numero',
   templateUrl: './adivina-el-numero.component.html',
@@ -19,8 +20,20 @@ export class AdivinaElNumeroComponent implements OnInit {
   Minuto:number;
   Minutostring:any;
   repetidor:any;
-  constructor() { 
-    this.nuevoJuego = new JuegoAdivina("",false,sessionStorage.getItem('user'),"00","00",0);
+  constructor(private route: ActivatedRoute,
+    private router: Router) {
+      const session = sessionStorage.getItem('user');
+      if(session==null)
+        {
+          alert("debes estar logueado");
+          this.router.navigate(['/Principal']);
+          sessionStorage.setItem("muestra","false");
+        } 
+        else
+          {
+            sessionStorage.setItem("muestra","true");
+          }      
+    this.nuevoJuego = new JuegoAdivina("Adivina El juego",false,sessionStorage.getItem('user'),"00","00",0);
     console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
     this.ocultarVerificar=false;
     this.Tiempo=0;
@@ -77,7 +90,7 @@ export class AdivinaElNumeroComponent implements OnInit {
     }
     console.info("numero Secreto:",this.nuevoJuego.gano);  
   }  
-
+  
   MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
     this.Mensajes=mensaje;    
     var x = document.getElementById("snackbar");

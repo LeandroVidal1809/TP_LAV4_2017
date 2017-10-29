@@ -1,12 +1,18 @@
 img {width:400px; margin:auto; }
 
 .centra{
-
     text-align: center;
+    margin-top: 80px;
+    
 }
 .container{
     padding-left:100px;
 }
+body{
+    background:url('https://i.pinimg.com/736x/61/f5/4a/61f54ad0a09d5c73e448e46818b25675.jpg');
+    padding:100px;
+  }
+  
 .buttona {
     border-radius: 10px;
     position: relative;
@@ -15,6 +21,7 @@ img {width:400px; margin:auto; }
     font-size: 28px;
     color: #FFFFFF;
     padding: 10px;
+    margin-top: 80px;
     width: 200px;
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari */

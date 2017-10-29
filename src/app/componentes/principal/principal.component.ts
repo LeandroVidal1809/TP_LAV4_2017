@@ -1,19 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
+
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent implements OnInit {
- public status: any = {
+ muestra:boolean;
+  public status: any = {
     isFirstOpen: true,
     isFirstDisabled: false
   };
   constructor(private route: ActivatedRoute,
     private router: Router) { 
-    
+      var muestra = sessionStorage.getItem('muestra');
+    if(muestra=="false")
+    {
+      this.muestra=false;
+    }
+    else
+      {this.muestra=true;}
 
     
    }
@@ -38,6 +46,9 @@ export class PrincipalComponent implements OnInit {
         break;
         case 'Anagrama':
         this.router.navigate(['/Juegos/Anagrama']);
+      break;
+      case 'Juegos':
+      this.router.navigate(['/Juegos']);
       break;
     }
 
