@@ -1,0 +1,67 @@
+.pizarra
+{
+
+    background-image: url('/assets/imagenes/pizarron.jpg');
+    margin-left: 500px;
+    margin-top: 00px;
+    width: 50%;
+    background-size:100%; 
+}
+.Gano{
+    color: #16E12B;
+    font-weight: bold;
+    margin-left: 10px; 
+    
+   font-size: 50px;
+}
+.Perdio{
+    color: #E11E16;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 1px;
+    font-size: 40px;
+}
+.btn-info 
+{
+    background-color: #005715;
+    border: 4px solid rgba(40, 0, 0, 0.95);
+    width: 200px;
+    margin-left: 500px;
+}
+.btn-info:hover
+{
+    background-color: rgba(40, 0, 0, 0.95);
+    border: 4px solid #005715;
+
+}
+.abajo
+{
+    margin-left: 500px;
+    margin-top: 100px;
+    width: 50%;
+    
+}
+h1, h2, h3 {display:inline;}
+.txtPizarra
+{
+    background-color: #005715;
+    border-color: #005715;
+    color: white;
+    width: 20%;
+    font-size: 80px;
+    margin-top: 10px;
+    margin-left: 50px;
+    white-space: nowrap;
+}
+.inputPizarra{
+    background-color: #005715;
+    border-color: #FFFFFF;
+    color: white;
+    width: 2px;
+    height: 80px;
+    font-size: 80px;
+    margin-top: 100px;
+    margin-left: 50px;
+    white-space: nowrap;
+
+}

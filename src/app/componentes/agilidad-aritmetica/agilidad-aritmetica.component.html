@@ -1,38 +1,29 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--app-menu></app-menu-->
-<!-- index.html -->
 
-
-<form name="juego">
-<ul>
-   <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-  
-  </li>
-  <li>
-   Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
-     
-   </li>
-  <li>
-    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
-  </li>
-  <li>
-    <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
-  </li>
-  <li>
+<div class="abajo">
+<h2 [hidden]="comienza"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
+<h1 style="padding-right:50px;margin-top:4px;color:black;border: 4px solid rgba(40, 0, 0, 0.95);"  class="col-xs-2">{{("0000").slice(-2)}}:{{("0000"+this.Tiempo).slice(-2)}} </h1>
+</div>
+<div class="pizarra">
+    <br><br>
+    <br><br>
+  <h1   class="txtPizarra">{{this.juegoAritm.primerNumero}}</h1>
+  <h1  [hidden]="!comienza"  class="txtPizarra">{{this.juegoAritm.operador}}</h1>
+  <h1   class="txtPizarra">{{this.juegoAritm.segundoNumero}}</h1>
+  <input [hidden]="!comienza" [(ngModel)]="juegoAritm.resultado" (keyup.enter)="verificar()"  name="numeroIngresado" type="text" class="inputPizarra" style="width:20%"/>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br>
+  <br [hidden]="comienza">
+  <br [hidden]="comienza">
+  <br [hidden]="comienza">
+  <br [hidden]="comienza">
+  <br [hidden]="comienza">
+</div>
+<div class="abajo">
+    <p [hidden]="!juegoAritm.Gano" class="Gano">Usted adivino el número!! errores: {{juegoAritm.cont}}</p>
+    <p [hidden]="!Perdio" class="Perdio">El tiempo se agoto!! el resultado era {{juegoAritm.resultReal}}</p>
+</div>
+<!-- 
     <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
-
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
-  </li>
-</ul>
-
-</form>
+ -->

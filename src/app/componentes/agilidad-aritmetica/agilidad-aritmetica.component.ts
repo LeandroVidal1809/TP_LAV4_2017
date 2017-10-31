@@ -13,8 +13,11 @@ export class AgilidadAritmeticaComponent implements OnInit {
   enviarJuego :EventEmitter<any>= new EventEmitter<any>();
   nuevoJuego : JuegoAgilidad;
   ocultarVerificar: boolean;
+  comienza:boolean;
   Tiempo: number;
   repetidor:any;
+  Perdio:boolean;
+  juegoAritm:JuegoAgilidad;
   private subscription: Subscription;
   ngOnInit() {
   }
@@ -31,30 +34,35 @@ export class AgilidadAritmeticaComponent implements OnInit {
           {
             sessionStorage.setItem("muestra","true");
           }      
-     this.ocultarVerificar=true;
-     this.Tiempo=5; 
-    this.nuevoJuego = new JuegoAgilidad();
-    console.info("Inicio agilidad");  
+    
+          this.juegoAritm= new JuegoAgilidad();
+          this.juegoAritm.Gano=false;
+          this.comienza=false;
+          this.Tiempo=10;
+          this.juegoAritm.cont=0;
+          this.Perdio=false;
+        
+      
   }
   NuevoJuego() {
-    this.ocultarVerificar=false;
-   this.repetidor = setInterval(()=>{ 
-      
-      this.Tiempo--;
-      console.log("llego", this.Tiempo);
-      if(this.Tiempo==0 ) {
-        clearInterval(this.repetidor);
-        this.verificar();
-        this.ocultarVerificar=true;
-        this.Tiempo=5;
-      }
-      }, 900);
-
+    this.juegoAritm.GenerarNuevo();
+    this.comienza=true;
+     this.repetidor = setInterval(()=>{ 
+       this.Tiempo--;
+       if(this.Tiempo==0 ) {
+         clearInterval(this.repetidor);
+         this.verificar();
+         this.Perdio=true;
+         this.Tiempo=10;
+       }
+       }, 900);
   }
   verificar()
   {
+ 
+   this.juegoAritm.Resultado();
     this.ocultarVerificar=false;
-    clearInterval(this.repetidor);
+    
    
 
    
