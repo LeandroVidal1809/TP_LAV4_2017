@@ -13,7 +13,7 @@
   <h1   class="txtPizarra">{{this.juegoAritm.segundoNumero}}</h1>
   <input [hidden]="!comienza" [(ngModel)]="juegoAritm.resultado" (keyup.enter)="verificar()"  name="numeroIngresado" type="text" class="inputPizarra" style="width:20%"/>
   <br><br><br><br><br><br><br><br>
-  <br><br><br>
+  <br><br><br><br><br><br><br><br>
   <br [hidden]="comienza">
   <br [hidden]="comienza">
   <br [hidden]="comienza">
@@ -21,9 +21,6 @@
   <br [hidden]="comienza">
 </div>
 <div class="abajo">
-    <p [hidden]="!juegoAritm.Gano" class="Gano">Usted adivino el número!! errores: {{juegoAritm.cont}}</p>
+    <p [hidden]="!juegoAritm.Gano" class="Gano">Usted adivino el número!! Intentos: {{juegoAritm.cont}}</p>
     <p [hidden]="!Perdio" class="Perdio">El tiempo se agoto!! el resultado era {{juegoAritm.resultReal}}</p>
 </div>
-<!-- 
-    <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
- -->

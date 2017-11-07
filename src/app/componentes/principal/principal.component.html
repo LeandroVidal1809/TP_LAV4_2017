@@ -26,8 +26,23 @@
                     <li  (click)="Juego('Anagrama')"><a>Anagrama</a></li>
                  
                 </ul>
-
-
+                <li  data-toggle="collapse" data-target="#products1" class="collapsed active">
+                    <a ><i class="fa fa-gift fa-lg"></i> Listados y Estadisticas <span class="arrow"></span></a>
+                  </li>
+                  <ul class="sub-menu collapse" id="products1">
+                      <li  (click)="Listado('Estadio')"><a>Adivina el estadio</a></li>
+                      <li  (click)=" Listado('Adivina')"><a>Adivina el Numero</a></li>
+                      <li (click)="Listado('Agilidad')"><a>Agilidad aritmetica</a></li>
+                      <li (click)="Listado('ppt')"><a>Piedra papel o Tijera</a></li>
+                      <li  (click)="Listado('Anagrama')"><a>Anagrama</a></li>
+                   
+                  </ul>
+                    
+                <li (click)="Juego('quienSoy')">
+                    <i class="fa fa-dashboard fa-lg" ></i> Quién Soy?
+                  </li>
+  
+<!-- 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
                   <a href="#"><i class="fa fa-globe fa-lg"></i> Opciones <span class="arrow"></span></a>
                 </li>  
@@ -35,7 +50,7 @@
                   <li>New Service 1</li>
                   <li>New Service 2</li>
                   <li>New Service 3</li>
-                </ul>
+                </ul> -->
 
 
                

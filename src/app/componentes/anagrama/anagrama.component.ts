@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { JuegoAnagrama } from '../../clases/juego-anagrama';
 @Component({
   selector: 'app-anagrama',
   templateUrl: './anagrama.component.html',
@@ -12,12 +13,14 @@ export class AnagramaComponent implements OnInit {
   AciertosTXT:string;
   aciertos:number;
   Tiempo: number;
+  intentoreal:number;
   Minuto:number;
   comenzo:boolean;
   repetidor:any;
   respuesta:string;
   gano:number;
   intentos:number;
+  nuevoJuego: JuegoAnagrama;
   comienza:boolean;
   palabraMuestra:string;
   constructor(private route: ActivatedRoute,
@@ -41,6 +44,9 @@ export class AnagramaComponent implements OnInit {
 
     inicializa()
     {
+      this.intentoreal=0;
+      this.intentos=3;
+      this.nuevoJuego = new JuegoAnagrama("Adivina El juego",false,sessionStorage.getItem('user'),"00","00",0);      
       this.aciertos=0;
       this.i=0;      
       this.miArrayPalabras=new Array<any>();
@@ -84,7 +90,9 @@ export class AnagramaComponent implements OnInit {
     }
    async Verificar()
     {
+      this.intentoreal++;
       this.respuesta=this.respuesta.toLocaleLowerCase();
+      
         if(this.miArrayPalabras[this.i].Ok=="palabra_"+this.respuesta)
         {
           this.palabraMuestra=this.miArrayPalabras[this.i].Ok;
@@ -100,6 +108,14 @@ export class AnagramaComponent implements OnInit {
             {
               this.ocultaCorrecto=true
               this.gano=10;
+              this.nuevoJuego.gano=true;
+              this.nuevoJuego.nombre="Anagrama"
+              this.nuevoJuego.minutos=this.Minuto;
+              this.nuevoJuego.intentos=this.intentoreal;
+              this.nuevoJuego.segundos=this.Tiempo;
+              this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+              this.nuevoJuego.Save();
+        this.intentoreal=0;
              // this.nuevoJuego.gano=true;
              this.comienza=false; 
              this.intentos=0;
@@ -115,8 +131,15 @@ export class AnagramaComponent implements OnInit {
         this.intentos--;
         if(this.intentos==0)
           {
-            // this.nuevoJuego.gano=false;
-            // this.perdio=false;
+            this.gano=0;
+            this.nuevoJuego.gano=false;
+            this.nuevoJuego.nombre="Anagrama"
+            this.nuevoJuego.minutos=this.Minuto;
+            this.nuevoJuego.segundos=this.Tiempo;
+            this.nuevoJuego.intentos=this.intentoreal;
+            this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+            this.nuevoJuego.Save();
+            this.comienza=false;
           }
        }
 

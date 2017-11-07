@@ -1,4 +1,5 @@
-export class JuegoAgilidad {
+import { Juego } from '../clases/juego'
+export class JuegoAgilidad extends  Juego {
     primerNumero:number;
     segundoNumero:number;
     operador:string;
@@ -7,7 +8,8 @@ export class JuegoAgilidad {
     Gano:boolean;
     NumeroGenerador:boolean;
     cont:number;
-    
+    constructor(nombre?: string, gano?: boolean, jugador?:string,minutos?:string,segundos?:string,intentos?:any) {
+        super("Adivina el número",gano,jugador,minutos,segundos,intentos)}
     GenerarNuevo()
     {
 
@@ -56,7 +58,7 @@ export class JuegoAgilidad {
             {
                this.Gano=true;
                this.NumeroGenerador=false;
-
+                        
             }
             else
 

@@ -1,4 +1,11 @@
-.table-condensed{
-    left: 100px;        
-    height: 40px;
+
+.gano{
+    color: green;
+    font-size: 15px bold;
+}
+.perdio{
+    color:red;
+}
+table1{
+    height: 20000px;
 }

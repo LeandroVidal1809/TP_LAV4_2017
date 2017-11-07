@@ -29,6 +29,7 @@ export class PptComponent implements OnInit {
   fin:boolean;
   Minutostring:any;
   repetidor:any;
+  
   //Fin Propiedades
   constructor(private route: ActivatedRoute,
     private router: Router) {
@@ -45,14 +46,15 @@ export class PptComponent implements OnInit {
           }      
     
    this.Inicializa();
-   }
+  
+  }
 
   ngOnInit() {
   }
 
   Inicializa()
 {
-  this.nuevoJuego = new JuegoPpt("",false,sessionStorage.getItem('user'),"00","00",0);
+  this.nuevoJuego = new JuegoPpt("piedra papel o tijera",false,sessionStorage.getItem('user'),"00","00",0);
   this.eligio=true;
   this.puntoOpo=0;
   this.puntoTu=0;
@@ -84,12 +86,22 @@ export class PptComponent implements OnInit {
         {
           this.result="Ganado!!";
           this.nuevoJuego.gano=true;
+          this.nuevoJuego.nombre="piedra papel o tijera"
+          this.nuevoJuego.minutos=this.Minuto;
+          this.nuevoJuego.segundos=this.Tiempo;
+          this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+          this.nuevoJuego.Save();
           this.plataforma=true;
         }
         else if(this.puntoTu<this.puntoOpo)
           {
             this.result="Perdido! :(";
             this.nuevoJuego.gano=false;
+            this.nuevoJuego.nombre="piedra papel o tijera"
+            this.nuevoJuego.minutos=this.Minuto;
+            this.nuevoJuego.segundos=this.Tiempo;
+            this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+            this.nuevoJuego.Save();
             this.plataforma=true;
             this.botonComenzar=false;
             this.eligio=true;

@@ -1,24 +1,33 @@
+<app-cabecera>  </app-cabecera>
+<app-principal>  </app-principal>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<table class="table table-condensed">
+
+
+<table class="table table-striped" style="margin-left:300px;margin-top:200px;">
     <thead>
-      <tr>
-        <th></th>
-        <th>Juego</th>
-        <th>Jugador</th>
+      <tr style="font-size:20px;">
+        
+        <th >Juego</th>
+        <th style="width:10px;">Jugador</th>
         <th>Resultado</th>
         <th>Tiempo</th>
         <th>Intentos</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let juego of listado">
-        <td>{{juego.nombre}} </td>
-        <td>{{juego.jugador}} </td> 
-        <td *ngIf="juego.gano">Gano </td>   
-        <td *ngIf="!juego.gano">Perdio</td>
+      <tr  style="font-size:15px;"  *ngFor="let juego of filterItemsOfType()"  >
+        
+        <td >{{juego.nombre}} </td>
+        <td style="width:10px;">{{juego.jugador}} </td> 
+        <td class="gano" *ngIf="juego.resultado">Gano </td>   
+        <td class="perdio" *ngIf="!juego.resultado">Perdio</td>
         <td>{{("0000"+juego.minutos).slice(-2)}}:{{("0000"+juego.segundos).slice(-2)}}</td>
-        <td>{{juego.intentos}} </td>     
-      </tr>
-     
+        <td>{{juego.intentos}} </td>
+        
+             
+      </tr>     
     </tbody>
   </table>

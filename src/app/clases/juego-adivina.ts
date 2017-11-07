@@ -19,6 +19,7 @@ public verificar() {
         }
      }
 
+     
 public generarnumero() {
         this.numeroSecreto = Math.floor((Math.random() * 100) + 1);
         console.info('numero Secreto:' + this.numeroSecreto);

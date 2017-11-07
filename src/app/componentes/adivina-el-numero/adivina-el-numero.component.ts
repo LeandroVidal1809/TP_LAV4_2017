@@ -60,16 +60,18 @@ export class AdivinaElNumeroComponent implements OnInit {
   }
   verificar()
   {
+  localStorage.clear();
     this.contador++;
     this.ocultarVerificar=true;
     console.info("numero Secreto:",this.nuevoJuego.gano);  
     if (this.nuevoJuego.verificar()){
-      
       this.nuevoJuego.intentos=this.contador;
       this.nuevoJuego.gano=true;
+      this.nuevoJuego.nombre="Adivina el número"
       this.nuevoJuego.minutos=this.Minuto;
       this.nuevoJuego.segundos=this.Tiempo;
-      this.enviarJuego.emit(this.nuevoJuego);
+      this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+      this.nuevoJuego.Save();
       this.MostarMensaje("Felicidades!! Has ganado en " + this.contador + " intentos" ,true);
       this.nuevoJuego.numeroSecreto=0;
         clearInterval(this.repetidor);

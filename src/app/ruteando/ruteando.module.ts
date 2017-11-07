@@ -28,6 +28,7 @@ const MiRuteo = [
 {path: '' , component: PrincipalComponent},
 {path: 'Login' , component: LoginComponent},
 {path: 'QuienSoy' , component: QuienSoyComponent},
+{path: 'Listado' , component: ListadoDeResultadosComponent},
 {path: 'Registro' , component: RegistroComponent},
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
@@ -44,7 +45,7 @@ children:
       {path: 'Anagrama' , component: AnagramaComponent}]
 },
 {path: '**' , component: ErrorComponent},
-{path: 'error' , component: ErrorComponent}];
+{path: 'Liistado' , component: ErrorComponent}];
 
 @NgModule({
   imports: [

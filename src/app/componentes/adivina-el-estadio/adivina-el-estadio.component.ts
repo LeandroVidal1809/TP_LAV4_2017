@@ -75,7 +75,13 @@ constructor(private route: ActivatedRoute,
             {
               this.ocultaCorrecto=true
               this.nuevoJuego.gano=true;
-              this.intentos=0;
+              this.nuevoJuego.nombre="Adivina el estadio"
+              this.nuevoJuego.minutos=this.Minuto;
+              this.nuevoJuego.segundos=this.Tiempo;
+              this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+              this.nuevoJuego.Save();
+              this.intentos=1;
+             
               this.TerminarTimer();
             }
             else
@@ -88,8 +94,14 @@ constructor(private route: ActivatedRoute,
         this.intentos--;
         if(this.intentos==0)
           {
+            
             this.nuevoJuego.gano=false;
-            this.perdio=false;
+            this.nuevoJuego.nombre="Adivina el estadio"
+            this.nuevoJuego.minutos=this.Minuto;
+            this.nuevoJuego.segundos=this.Tiempo;
+            this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+            this.nuevoJuego.Save();
+            this.intentos=0
           }
        }
 

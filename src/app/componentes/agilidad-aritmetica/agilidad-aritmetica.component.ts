@@ -13,6 +13,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   enviarJuego :EventEmitter<any>= new EventEmitter<any>();
   nuevoJuego : JuegoAgilidad;
   ocultarVerificar: boolean;
+  intentos:number;
   comienza:boolean;
   Tiempo: number;
   repetidor:any;
@@ -34,7 +35,8 @@ export class AgilidadAritmeticaComponent implements OnInit {
           {
             sessionStorage.setItem("muestra","true");
           }      
-    
+          this.intentos=0;
+          this.nuevoJuego = new JuegoAgilidad("Adivina El juego",false,sessionStorage.getItem('user'),"00","00",0);          
           this.juegoAritm= new JuegoAgilidad();
           this.juegoAritm.Gano=false;
           this.comienza=false;
@@ -47,6 +49,8 @@ export class AgilidadAritmeticaComponent implements OnInit {
   NuevoJuego() {
     this.juegoAritm.GenerarNuevo();
     this.comienza=true;
+    this.nuevoJuego.Gano=false;
+    this.Perdio=false;
      this.repetidor = setInterval(()=>{ 
        this.Tiempo--;
        if(this.Tiempo==0 ) {
@@ -54,13 +58,35 @@ export class AgilidadAritmeticaComponent implements OnInit {
          this.verificar();
          this.Perdio=true;
          this.Tiempo=10;
-       }
+         this.intentos=0;
+         this.nuevoJuego.gano=false;
+         this.nuevoJuego.nombre="Agilidad aritmetica"
+         this.nuevoJuego.segundos=this.Tiempo;
+         this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+         this.nuevoJuego.Save();
+         this.intentos=0;
+        }
        }, 900);
   }
   verificar()
   {
  
    this.juegoAritm.Resultado();
+   if(this.juegoAritm.Gano)
+    {
+      clearInterval(this.repetidor);
+      this.nuevoJuego.gano=true;
+      this.nuevoJuego.nombre="Adivina el número"
+      this.nuevoJuego.segundos=this.Tiempo;
+      this.nuevoJuego.jugador=sessionStorage.getItem('user');;
+      this.nuevoJuego.Save();
+      this.intentos=0;
+
+    }
+    else
+    {
+      this.intentos++;
+    }
     this.ocultarVerificar=false;
     
    

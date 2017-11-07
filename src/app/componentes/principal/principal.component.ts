@@ -15,7 +15,7 @@ export class PrincipalComponent implements OnInit {
   };
   constructor(private route: ActivatedRoute,
     private router: Router) { 
-      var muestra = sessionStorage.getItem('muestra');
+        var muestra = sessionStorage.getItem('muestra');
     if(muestra=="false")
     {
       this.muestra=false;
@@ -28,6 +28,7 @@ export class PrincipalComponent implements OnInit {
 
   logueado:boolean
   ngOnInit() {
+  
   }
 
   Juego(tipo: string) {
@@ -50,7 +51,33 @@ export class PrincipalComponent implements OnInit {
       case 'Juegos':
       this.router.navigate(['/Juegos']);
       break;
+      case 'quienSoy':
+      this.router.navigate(['/QuienSoy']);
+      break;
     }
-
   }
+    Listado(tipo: string) {
+     
+      switch (tipo) {
+        case 'Adivina':
+        sessionStorage.setItem('listado','Adivina el número');
+          break;
+        case 'Agilidad':
+        sessionStorage.setItem('listado','Agilidad aritmetica');
+          break;
+        case 'Estadio':
+        sessionStorage.setItem('listado','Adivina el estadio');
+          break;
+        case 'ppt':
+        sessionStorage.setItem('listado','piedra papel o tijera');
+          break;
+          case 'Anagrama':
+          sessionStorage.setItem('listado','Anagrama');
+          break;
+
+      }
+      this.router.navigate(['/Liistado']);
+  }
+
+  
 }
