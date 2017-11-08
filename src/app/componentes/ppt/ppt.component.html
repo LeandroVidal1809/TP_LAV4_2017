@@ -7,16 +7,16 @@
 <h3 [hidden]="botonComenzar"  class="centra2">El juego durará 20 segundos, el que mas puntos obtenga será el ganador. Suerte!!</h3>
 <div [hidden]="plataforma" class="centra">
     <tr >
-        <th><a (click)="OpcionElegida('piedra')"><img class="imagenJuego" src="../assets/imagenes/piedra.jpg"></a></th>
-        <th><a (click)="OpcionElegida('papel')"><img class="imagenJuego" src="../assets/imagenes/papel.jpg"></a></th>
-        <th><a (click)="OpcionElegida('tijera')"><img class="imagenJuego" src="../assets/imagenes/tijera.jpg"></a></th>
+        <th><a (click)="OpcionElegida('piedra')"><img class="imagenJuego" src="./assets/imagenes/piedra.jpg"></a></th>
+        <th><a (click)="OpcionElegida('papel')"><img class="imagenJuego" src="./assets/imagenes/papel.jpg"></a></th>
+        <th><a (click)="OpcionElegida('tijera')"><img class="imagenJuego" src="./assets/imagenes/tijera.jpg"></a></th>
     </tr> 
   </div>
   <div [hidden]="eligio" class="centra1" >
   <tr>
-      <th><img class="imagenResultado" src="../assets/imagenes/{{this.opcionTu}}.jpg"></th> 
-      <th><img class="imagenResultado" src="../assets/imagenes/blanco.jpg"></th>
-      <th><img class="imagenResultado" src="../assets/imagenes/{{this.opcionOpo}}.jpg"></th>
+      <th><img class="imagenResultado" src="./assets/imagenes/{{this.opcionTu}}.jpg"></th> 
+      <th><img class="imagenResultado" src="./assets/imagenes/blanco.jpg"></th>
+      <th><img class="imagenResultado" src="./assets/imagenes/{{this.opcionOpo}}.jpg"></th>
 
   </tr>
  

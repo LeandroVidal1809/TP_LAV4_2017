@@ -17,7 +17,7 @@
     <h3 class="col-sm-12 control-label" for="logoFileImage">ADIVINA A QUE CLUB PERTENECE EL ESTADIO</h3>
     <div class="col-sm-12">
       <div class="thumbnail">
-        <img class="img-thumbnail" src="../assets/imagenes/{{club}}.jpg" alt="Avatar" style="width:50%">
+        <img class="img-thumbnail" src="./assets/imagenes/{{club}}.jpg" alt="Avatar" style="width:50%">
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
   <div>
     <a  *ngFor="let item of miArrayEscudo">
     <a *ngIf = '[intentos] > 0' (click)="OpcionElegida(item.Club)">
-      <img  src="../assets/imagenes/{{item.Club}}.png" alt="Avatar" class="escudo" >
+      <img  src="./assets/imagenes/{{item.Club}}.png" alt="Avatar" class="escudo" >
     </a>
     </a>
     </div>
