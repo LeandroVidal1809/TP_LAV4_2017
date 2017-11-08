@@ -330,7 +330,7 @@ button {
     top: 0;
     left: 0;
     z-index: 999;
-    background-image: url("/assets/imagenes/cabecera.jpg");
+    background-image: url("assets/imagenes/cabecera.jpg");
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     -ms-transition: height 0.3s;
