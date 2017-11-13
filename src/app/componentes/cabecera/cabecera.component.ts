@@ -56,7 +56,11 @@ export class CabeceraComponent implements OnInit {
    
   }
   
-
+  InsertarUsuario()
+  {
+  this.username="leandrov@axoft.com";
+  this.password="Lisandro123";
+  }
   signout()
   {
     

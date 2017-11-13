@@ -1,51 +1,19 @@
 <!-- POPUP REGISTRO -->
 <div id="id01" class="modal">
-  
-    <form class="modal-content animate" >
-      <div class="container">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Cerrar Registro">X</span> 
-          <label><b>Email</b></label>
-  		  <input id="email" type="text"  [(ngModel)]="usernameR" class="form-control" name="email" placeholder="Ingresa tu Email">		  
-        <label><b>Clave</b></label>
-        <input id="password" [(ngModel)]="passwordR" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
-        <label><b>Confirmar Clave</b></label>
-        <input id="password" [(ngModel)]="passwordconfirmR" type="password" class="form-control" name="password" placeholder="Repiite tu clave">
-        <div class="clearfix">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Me arrepenti</button>
-          <button type="submit" (click)="Aceptar()" class="signupbtn">Registrarme</button>
-        </div>
-      </div>
-    </form>
-  </div>
-  
-  <script>
-  // Get the modal
-  var modal = document.getElementById('id01');
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
-  </script> 
-
-  <!-- FIN POPUP REGISTRO -->
-
-  <!-- POPUP LOGIN  -->
-  <div id="id02" class="modal">
-
+    
       <form class="modal-content animate" >
-        
         <div class="container">
-            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Cerrar ingreso">X</span> 
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Cerrar Registro">X</span> 
             <label><b>Email</b></label>
-          <input id="email" type="text"  [(ngModel)]="username" class="form-control" name="email" placeholder="Ingresa tu Email">		  
+          <input id="email" type="text"  [(ngModel)]="usernameR" class="form-control" name="email" placeholder="Ingresa tu Email">		  
           <label><b>Clave</b></label>
-          <input id="password" [(ngModel)]="password" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
+          <input id="password" [(ngModel)]="passwordR" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
+          <label><b>Confirmar Clave</b></label>
+          <input id="password" [(ngModel)]="passwordconfirmR" type="password" class="form-control" name="password" placeholder="Repiite tu clave">
           <div class="clearfix">
-            <button type="submit" (click)="Entrar()" class="signupbtn">ingresar</button>
-       
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Me arrepenti</button>
+            <button type="submit" (click)="Aceptar()" class="signupbtn">Registrarme</button>
+            
           </div>
         </div>
       </form>
@@ -53,7 +21,7 @@
     
     <script>
     // Get the modal
-    var modal = document.getElementById('id02');
+    var modal = document.getElementById('id01');
     
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
@@ -61,22 +29,61 @@
             modal.style.display = "none";
         }
     }
-    </script>
-<div [hidden]="semuestra"  class="alert alert-warning">
-  <strong>Atencion!</strong> Deber Loguearte para ingresar
-</div> 
- <!--FIN  POPUP LOGIN  -->
-
-
-<header>
-    <img  src="/assets/imagenes/cabecera.jpg">
-  <div class="container" >
-      <nav>
-        <ul >
-          <li *ngIf="!logueado"><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Registrarse</button></li>
-          <li *ngIf="!logueado"><button  class="buttona"  onclick="document.getElementById('id02').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button></li>
-          <li *ngIf="logueado"><button class="buttona"  (click)="signout()" ><span class="glyphicon glyphicon-user"></span> Cerrar Sesion</button></li>
-        </ul>
-      </nav>
-  </div>
-</header>
+    </script> 
+  
+    <!-- FIN POPUP REGISTRO -->
+  
+    <!-- POPUP LOGIN  -->
+    <div id="id02" class="modal">
+  
+        <form class="modal-content animate" >
+          
+          <div class="container">
+              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Cerrar ingreso">X</span> 
+              <label><b>Email</b></label>
+            <input id="email" type="text"  [(ngModel)]="username" class="form-control" name="email" placeholder="Ingresa tu Email">		  
+            <label><b>Clave</b></label>
+            <input id="password" [(ngModel)]="password" type="password" class="form-control" name="password" placeholder="Ingresa tu clave">
+            <div class="clearfix">
+              <button type="submit" (click)="Entrar()" class="signupbtn">ingresar</button>
+              <button type="submit" style="margin-right: 685px;width:300px;background-color:brown" (click)="InsertarUsuario()" class="signupbtn">Usuario</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <script>
+      // Get the modal
+      var modal = document.getElementById('id02');
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+      </script>
+  <div [hidden]="semuestra"  class="alert alert-warning">
+    <strong>Atencion!</strong> Deber Loguearte para ingresar
+  </div> 
+   <!--FIN  POPUP LOGIN  -->
+  
+  
+  <header>
+    <div class="container" >
+        <nav>
+          <ul >
+            <li *ngIf="!logueado"><button class="buttona"  onclick="document.getElementById('id01').style.display='block'" ><span class="glyphicon glyphicon-user"></span> Registrarse</button></li>
+            <li *ngIf="!logueado"><button  class="buttona"  onclick="document.getElementById('id02').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button></li>
+            <li *ngIf="logueado"><button class="buttona"  (click)="signout()" ><span class="glyphicon glyphicon-user"></span> Cerrar Sesion</button></li>
+          </ul>
+        </nav>
+    </div>
+  </header>
+  
+      <div [hidden]="logueado" style="margin-left:500px;margin-top:7%">
+          <h1 >Bienvenidos a la sala de juegos, Ingresa para disfrutar de estos juegos:</h1>
+      <img style="width:90%;"  src="../assets/imagenes/principal1.png">
+      </div>
+      
+  
